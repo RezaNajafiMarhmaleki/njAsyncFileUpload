@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>njAsyncFileUpload</h1>
+    آپلود فایل
+</div>
+
+<div class="row">
+    
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4></h4>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("انتخاب فایل(ها)", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <div id="njfile"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="submit" />
+            </div>
+        </div>
+    }
+
+</div>
+@section scripts{
+<script>$(document).ready(function () { $("#njfile").njAsyncFileUpload( { requireImage :false}); });</script>
+    }
