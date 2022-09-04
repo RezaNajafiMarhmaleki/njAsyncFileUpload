@@ -7,6 +7,7 @@ Asp.net MVC
 
 
 how to use?
+<div id="njfile"></div>
 <script>
   $(document).ready(function () { 
     $("#njfile").njAsyncFileUpload( { requireImage :false}); 
